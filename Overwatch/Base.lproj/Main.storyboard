@@ -1,8 +1,107 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ILZ-ID-JK2">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5lt-NC-s7G">
+            <objects>
+                <viewController id="GYL-22-rZr" customClass="ViewController" customModule="Overwatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z8f-AC-pGq"/>
+                        <viewControllerLayoutGuide type="bottom" id="cR2-hp-cdF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="83F-ks-0eR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aXW-Us-hQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1308" y="118"/>
+        </scene>
+        <!--Selection View Controller-->
+        <scene sceneID="dAu-Qh-maj">
+            <objects>
+                <viewController id="ILZ-ID-JK2" customClass="SelectionViewController" customModule="Overwatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NNS-wO-0w5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hmd-cV-XvY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NZa-cg-evs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reaper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9D3-n8-xwT">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rbN-tL-FCz">
+                                <segments>
+                                    <segment title="Offense"/>
+                                    <segment title="Defense"/>
+                                    <segment title="Tank"/>
+                                    <segment title="Support"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeInHeroType:" destination="ILZ-ID-JK2" eventType="valueChanged" id="dxu-2K-wru"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZpP-bL-c3h" userLabel="Container View">
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6I0-Om-St4">
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xdT-Fy-2DQ"/>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="xdT-Fy-2DQ" secondAttribute="trailing" id="DF7-H5-KDT"/>
+                                            <constraint firstAttribute="bottom" secondItem="xdT-Fy-2DQ" secondAttribute="bottom" id="GBG-1E-dDm"/>
+                                            <constraint firstItem="xdT-Fy-2DQ" firstAttribute="leading" secondItem="6I0-Om-St4" secondAttribute="leading" id="ZAl-ve-Hgl"/>
+                                            <constraint firstItem="xdT-Fy-2DQ" firstAttribute="top" secondItem="6I0-Om-St4" secondAttribute="top" id="sIw-vg-hed"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6I0-Om-St4" firstAttribute="top" secondItem="ZpP-bL-c3h" secondAttribute="top" id="6O7-Ap-3LS"/>
+                                    <constraint firstAttribute="bottom" secondItem="6I0-Om-St4" secondAttribute="bottom" id="9NG-nd-oEv"/>
+                                    <constraint firstItem="xdT-Fy-2DQ" firstAttribute="height" secondItem="ZpP-bL-c3h" secondAttribute="height" id="APy-D8-Pgd"/>
+                                    <constraint firstItem="6I0-Om-St4" firstAttribute="trailing" secondItem="ZpP-bL-c3h" secondAttribute="trailing" id="CIM-mf-JPp"/>
+                                    <constraint firstItem="6I0-Om-St4" firstAttribute="leading" secondItem="ZpP-bL-c3h" secondAttribute="leading" id="LyV-FO-kk9"/>
+                                    <constraint firstItem="xdT-Fy-2DQ" firstAttribute="width" secondItem="ZpP-bL-c3h" secondAttribute="width" id="rtz-PZ-SMw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9D3-n8-xwT" firstAttribute="centerY" secondItem="NZa-cg-evs" secondAttribute="centerY" multiplier="0.3" id="2gm-fT-ATQ"/>
+                            <constraint firstItem="ZpP-bL-c3h" firstAttribute="height" secondItem="NZa-cg-evs" secondAttribute="height" multiplier="0.6" id="CA1-xS-Qot"/>
+                            <constraint firstItem="rbN-tL-FCz" firstAttribute="width" secondItem="ZpP-bL-c3h" secondAttribute="width" id="Lb0-mu-C1m"/>
+                            <constraint firstItem="ZpP-bL-c3h" firstAttribute="width" secondItem="NZa-cg-evs" secondAttribute="width" multiplier="0.9" id="RlE-eh-eY5"/>
+                            <constraint firstItem="ZpP-bL-c3h" firstAttribute="centerY" secondItem="NZa-cg-evs" secondAttribute="centerY" multiplier="1.2" id="ULB-s2-Ync"/>
+                            <constraint firstItem="rbN-tL-FCz" firstAttribute="top" secondItem="ZpP-bL-c3h" secondAttribute="bottom" multiplier="1.02" id="bLh-83-pjP"/>
+                            <constraint firstItem="9D3-n8-xwT" firstAttribute="centerX" secondItem="NZa-cg-evs" secondAttribute="centerX" id="geu-Oh-RcC"/>
+                            <constraint firstItem="ZpP-bL-c3h" firstAttribute="centerX" secondItem="NZa-cg-evs" secondAttribute="centerX" id="jT9-ED-T9C"/>
+                            <constraint firstItem="rbN-tL-FCz" firstAttribute="centerX" secondItem="NZa-cg-evs" secondAttribute="centerX" id="wTT-bF-geG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="characterStackView" destination="xdT-Fy-2DQ" id="u1e-mK-8TM"/>
+                        <outlet property="characterStackViewWidthConstraint" destination="rtz-PZ-SMw" id="pmg-x6-ztb"/>
+                        <outlet property="containerView" destination="ZpP-bL-c3h" id="71a-KD-Yig"/>
+                        <outlet property="heroNameLabel" destination="9D3-n8-xwT" id="nNy-cc-S5T"/>
+                        <outlet property="heroScrollView" destination="6I0-Om-St4" id="hWa-Bb-lc9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m9d-q1-LPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-412" y="117"/>
+        </scene>
+    </scenes>
 </document>
